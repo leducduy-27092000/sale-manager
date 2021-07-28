@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8">
+      <title>Login</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+   </head>
+   <body>
+      <th:block th:include="/_header"></th:block>
+      <th:block th:include="/_menu"></th:block>
+       
+      <div class="page-title">Login(For employee, Manager)</div>
+      
+      <div class="login-container">
+      	<h3>Enter user name and password</h3>
+      	<br>
+      	<form method="POST"
+            th:action="@{/j_spring_security_check}">
+            <table>
+               <tr>
+                  <td>User Name *</td>
+                  <td><input name="userName" th:value="${userC}" /></td>
+               </tr>
+               <tr>
+                  <td>Password *</td>
+                  <td><input type="password" name="password" th:value="${passC}" /></td>
+               </tr>
+               <tr>
+                  <td>&nbsp;</td>
+                  <td>
+                      <input type="submit" value="Login" />
+                      <input type="reset"  value="Reset" />
+                  </td>
+               </tr>
+            </table>
+         </form>
+         
+         <span class="error-message" th:utext="${error}"></span>
+         
+         <div style="text-align:left">
+          <h3>User/Password:</h3>
+          <ul>        
+             <li>employee1/123</li>
+             <li>manager1/123</li>   
+          </ul>
+      </div>
+      </div>
+       
+      <th:block th:include="/_footer"></th:block>
+       
+   </body>
+</html>
