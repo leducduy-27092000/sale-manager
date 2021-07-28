@@ -45,7 +45,6 @@ public class MainController {
     }
  
     @RequestMapping("/")
-    @ResponseBody
     public String home() {
         return "index";
     }
