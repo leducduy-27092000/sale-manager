@@ -63,12 +63,12 @@ public class MainController {
 		model.addAttribute("listProduct", listProduct);
 		
 		Cookie u = new Cookie("userC", "123");
-      Cookie p = new Cookie("passC", "456");
-      u.setMaxAge(60);
-      p.setMaxAge(60);
-      response.addCookie(u);
-      response.addCookie(p);
-    	return "productList";
+	    Cookie p = new Cookie("passC", "456");
+	    u.setMaxAge(60);
+	    p.setMaxAge(60);
+	    response.addCookie(u);
+	    response.addCookie(p);
+	    return "productList";
     }
     
     @RequestMapping("/buyProduct")
